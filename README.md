@@ -1,4 +1,4 @@
-# dotnet6-multiservice-docker
+# dotnet-multiproject-dockercompose-boilerplate
 
 ## Purpose
 

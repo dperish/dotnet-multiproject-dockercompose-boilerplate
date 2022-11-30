@@ -9,6 +9,9 @@ WORKDIR /src
 COPY ["dn7.webapi/dn7.webapi.csproj", "dn7.webapi/"]
 RUN dotnet restore "dn7.webapi/dn7.webapi.csproj"
 COPY . .
+RUN dotnet test "dn7.webapi.tests/dn7.webapi.tests.csproj"
+
+
 WORKDIR "/src/dn7.webapi"
 RUN dotnet build "dn7.webapi.csproj" -c Release -o /app/build
 

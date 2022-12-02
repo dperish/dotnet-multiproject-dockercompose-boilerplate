@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=lucky_louis
+      - POSTGRES_DB=dn7
+    volumes:
+      - ./volumes/postgres/:/var/lib/postgresql/data/
+
+  dn7webapi:
+    build:
+      context: ./
+      dockerfile: ./dn7.webapi/Dockerfile
+    image: dn7
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      - CONNECTION_STRING=host=db;database=dn7;user id=dbuser;password=lucky_louis
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

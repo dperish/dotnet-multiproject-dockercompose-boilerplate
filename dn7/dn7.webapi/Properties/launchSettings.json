@@ -5,7 +5,8 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "host=localhost;database=dn7;user id=dbuser;password=lucky_louis"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5292"
@@ -22,7 +23,11 @@
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-      "publishAllPorts": true
+      "publishAllPorts": true,
+      "environmentVariables": {
+        "CONNECTION_STRING": "host=localhost;database=dn7;user id=dbuser;password=lucky_louis"
+      }
+
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",

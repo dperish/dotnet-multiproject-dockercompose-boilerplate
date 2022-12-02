@@ -1,17 +1,15 @@
 using dn7.db;
 using Microsoft.EntityFrameworkCore;
 
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddDbContext<Dn7Context>(options =>
-    options.UseNpgsql(@"host=localhost;database=dn7;user id=dbuser;password=lucky_louis"));
+    options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
@@ -22,5 +20,8 @@ if (app.Environment.IsDevelopment() || !app.Environment.IsDevelopment()) {
 }
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+    scope.ServiceProvider.GetRequiredService<Dn7Context>().Database.Migrate();
 
 app.Run();

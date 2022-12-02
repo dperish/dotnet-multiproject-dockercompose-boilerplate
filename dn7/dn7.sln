@@ -8,6 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6F8FA02-AA28-4A4E-9B10-0EC8F6DAAF5B}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		..\.gitignore = ..\.gitignore
+		docker-compose.yml = docker-compose.yml
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dn7.webapi.tests", "dn7.webapi.tests\dn7.webapi.tests.csproj", "{3A3AE3CF-1A7C-40D8-83DE-DF65AB4AEBE7}"
@@ -15,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dn7.domain", "dn7.domain\dn7.domain.csproj", "{B5F729D0-F36B-4231-B1D3-3E4F72E729CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dn7.db", "dn7.db\dn7.db.csproj", "{EE43AD30-2DB8-42C7-9D94-905CFD5BD4C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "volumes", "volumes", "{70104D67-B9D3-44B9-804A-EED622F9145C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70104D67-B9D3-44B9-804A-EED622F9145C} = {D6F8FA02-AA28-4A4E-9B10-0EC8F6DAAF5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ECB94AD-37C5-49DD-95DA-0C7557589B0D}

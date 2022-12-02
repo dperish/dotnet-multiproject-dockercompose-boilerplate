@@ -14,7 +14,7 @@ namespace dn7.db
         // TODO: only do this running locally/dev
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
-                .UseNpgsql(@"host=localhost;database=dn7;user id=dbuser;password=lucky_louis");
+                .UseNpgsql(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
         //.ConfigureWarnings(b => b.Ignore(RelationalEventId.AmbientTransactionWarning));
 
 
